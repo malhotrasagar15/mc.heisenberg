@@ -42,7 +42,7 @@ def ising_model(n,tem,simulaions,J):      #tem=temperature
                 y = random.randint(0,n-1)
                 z = random.randint(0,n-1)
                                                             #cal. change in energy
-                DeltaE = 2*lattice[x,y]*J*(lattice[x,(y-1)%size,z] + lattice[x,(y+1)%size,z] + lattice[(x-1)%size,y,z] + lattice[(x+1)%size,y,z] + lattice[x,y,(z+1)%size] + lattice[x,,y,(z-1)%size])
+                DeltaE = 2*lattice[x,y]*J*(lattice[x,(y-1)%size,z] + lattice[x,(y+1)%size,z] + lattice[(x-1)%size,y,z] + lattice[(x+1)%size,y,z] + lattice[x,y,(z+1)%size] + lattice[x,y,(z-1)%size])
                 if DeltaE<=0:                                    # here metropolis alg.
                     lattice[x,y,z]=lattice[x,y,z]*-1       
                 elif random.random()<(np.exp(-DeltaE/t)):   
