@@ -23,7 +23,7 @@ for i in range(n):
             a[i][j][k] = latt()
 
 
-def ising_model(n,tem,simulaions,J):      #tem=temperature
+def heisenberg_model(n,tem,simulaions,J):      #tem=temperature
     energy_tem = []                               
     ncube = n*n*n
     
@@ -61,7 +61,7 @@ def ising_model(n,tem,simulaions,J):      #tem=temperature
         end_tem = time.time()
     return (tem,energy_tem)
 tem = np.linspace(0.50,10.0,21)
-X = ising_model(16,tem,1000,1)
+X = heisenberg_model(16,tem,1000,1)
 
 plt.plot(X[0],X[1])
 plt.xlabel('temerature (K)')
